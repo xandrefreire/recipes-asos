@@ -14,10 +14,13 @@
 		AC004E8821E8947C007B7467 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC004E8621E8947C007B7467 /* LaunchScreen.storyboard */; };
 		AC004E9321E8947C007B7467 /* RecipesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004E9221E8947C007B7467 /* RecipesTests.swift */; };
 		AC004EAB21E897E2007B7467 /* RecipesCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC004EA221E897E2007B7467 /* RecipesCore.framework */; };
-		AC004EB221E897E2007B7467 /* RecipesCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004EB121E897E2007B7467 /* RecipesCoreTests.swift */; };
 		AC004EB421E897E2007B7467 /* RecipesCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AC004EA421E897E2007B7467 /* RecipesCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AC004EB721E897E2007B7467 /* RecipesCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC004EA221E897E2007B7467 /* RecipesCore.framework */; };
 		AC004EB821E897E2007B7467 /* RecipesCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC004EA221E897E2007B7467 /* RecipesCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AC004EC321E898B1007B7467 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004EC221E898B1007B7467 /* Ingredient.swift */; };
+		AC004EC521E89AB1007B7467 /* IngredientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004EC421E89AB1007B7467 /* IngredientTests.swift */; };
+		AC004EC721E89B51007B7467 /* recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = AC004EC621E89B51007B7467 /* recipes.json */; };
+		AC004EC921E89B8C007B7467 /* ingredient.json in Resources */ = {isa = PBXBuildFile; fileRef = AC004EC821E89B8C007B7467 /* ingredient.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,8 +83,11 @@
 		AC004EA421E897E2007B7467 /* RecipesCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipesCore.h; sourceTree = "<group>"; };
 		AC004EA521E897E2007B7467 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC004EAA21E897E2007B7467 /* RecipesCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipesCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC004EB121E897E2007B7467 /* RecipesCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesCoreTests.swift; sourceTree = "<group>"; };
 		AC004EB321E897E2007B7467 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC004EC221E898B1007B7467 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		AC004EC421E89AB1007B7467 /* IngredientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTests.swift; sourceTree = "<group>"; };
+		AC004EC621E89B51007B7467 /* recipes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipes.json; sourceTree = "<group>"; };
+		AC004EC821E89B8C007B7467 /* ingredient.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ingredient.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +171,7 @@
 		AC004EA321E897E2007B7467 /* RecipesCore */ = {
 			isa = PBXGroup;
 			children = (
+				AC004EC021E89831007B7467 /* Common */,
 				AC004EA421E897E2007B7467 /* RecipesCore.h */,
 				AC004EA521E897E2007B7467 /* Info.plist */,
 			);
@@ -174,10 +181,36 @@
 		AC004EB021E897E2007B7467 /* RecipesCoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				AC004EB121E897E2007B7467 /* RecipesCoreTests.swift */,
+				AC004ECA21E89B90007B7467 /* JSONData */,
 				AC004EB321E897E2007B7467 /* Info.plist */,
+				AC004EC421E89AB1007B7467 /* IngredientTests.swift */,
 			);
 			path = RecipesCoreTests;
+			sourceTree = "<group>";
+		};
+		AC004EC021E89831007B7467 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				AC004EC121E89857007B7467 /* Domain */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		AC004EC121E89857007B7467 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				AC004EC221E898B1007B7467 /* Ingredient.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		AC004ECA21E89B90007B7467 /* JSONData */ = {
+			isa = PBXGroup;
+			children = (
+				AC004EC821E89B8C007B7467 /* ingredient.json */,
+				AC004EC621E89B51007B7467 /* recipes.json */,
+			);
+			path = JSONData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,9 +320,11 @@
 					};
 					AC004EA121E897E2007B7467 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					AC004EA921E897E2007B7467 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = AC004E7921E8947A007B7467;
 					};
 				};
@@ -344,6 +379,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC004EC921E89B8C007B7467 /* ingredient.json in Resources */,
+				AC004EC721E89B51007B7467 /* recipes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC004EC321E898B1007B7467 /* Ingredient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,7 +416,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC004EB221E897E2007B7467 /* RecipesCoreTests.swift in Sources */,
+				AC004EC521E89AB1007B7467 /* IngredientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +584,7 @@
 		AC004E9821E8947C007B7467 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8LNA9LB2Y8;
@@ -564,6 +603,7 @@
 		AC004E9921E8947C007B7467 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8LNA9LB2Y8;
@@ -624,6 +664,7 @@
 		AC004EBA21E897E2007B7467 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -642,6 +683,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexandrefreire.RecipesCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -652,6 +694,7 @@
 		AC004EBB21E897E2007B7467 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -681,6 +724,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8LNA9LB2Y8;
 				INFOPLIST_FILE = RecipesCoreTests/Info.plist;
@@ -691,6 +735,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexandrefreire.RecipesCoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Recipes.app/Recipes";
@@ -701,6 +746,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8LNA9LB2Y8;
 				INFOPLIST_FILE = RecipesCoreTests/Info.plist;
