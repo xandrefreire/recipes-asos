@@ -24,6 +24,8 @@
 		AC004ECC21E8A4E1007B7467 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004ECB21E8A4E1007B7467 /* Recipe.swift */; };
 		AC004ECE21E8A7DD007B7467 /* RecipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004ECD21E8A7DD007B7467 /* RecipeTests.swift */; };
 		AC004ED021E8A823007B7467 /* one_recipe.json in Resources */ = {isa = PBXBuildFile; fileRef = AC004ECF21E8A823007B7467 /* one_recipe.json */; };
+		AC004ED221E8AF4F007B7467 /* RecipeLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004ED121E8AF4F007B7467 /* RecipeLibrary.swift */; };
+		AC004ED621E8BDC7007B7467 /* RecipeLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004ED521E8BDC6007B7467 /* RecipeLibraryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +96,8 @@
 		AC004ECB21E8A4E1007B7467 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		AC004ECD21E8A7DD007B7467 /* RecipeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTests.swift; sourceTree = "<group>"; };
 		AC004ECF21E8A823007B7467 /* one_recipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = one_recipe.json; sourceTree = "<group>"; };
+		AC004ED121E8AF4F007B7467 /* RecipeLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeLibrary.swift; sourceTree = "<group>"; };
+		AC004ED521E8BDC6007B7467 /* RecipeLibraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeLibraryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +195,7 @@
 				AC004EB321E897E2007B7467 /* Info.plist */,
 				AC004EC421E89AB1007B7467 /* IngredientTests.swift */,
 				AC004ECD21E8A7DD007B7467 /* RecipeTests.swift */,
+				AC004ED521E8BDC6007B7467 /* RecipeLibraryTests.swift */,
 			);
 			path = RecipesCoreTests;
 			sourceTree = "<group>";
@@ -208,6 +213,7 @@
 			children = (
 				AC004EC221E898B1007B7467 /* Ingredient.swift */,
 				AC004ECB21E8A4E1007B7467 /* Recipe.swift */,
+				AC004ED121E8AF4F007B7467 /* RecipeLibrary.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -419,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC004EC321E898B1007B7467 /* Ingredient.swift in Sources */,
+				AC004ED221E8AF4F007B7467 /* RecipeLibrary.swift in Sources */,
 				AC004ECC21E8A4E1007B7467 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +434,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC004ED621E8BDC7007B7467 /* RecipeLibraryTests.swift in Sources */,
 				AC004EC521E89AB1007B7467 /* IngredientTests.swift in Sources */,
 				AC004ECE21E8A7DD007B7467 /* RecipeTests.swift in Sources */,
 			);

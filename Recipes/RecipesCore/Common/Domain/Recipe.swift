@@ -21,10 +21,19 @@ struct Recipe: Decodable {
     private let _steps: [String]
     private let _timers: [Int]
     let imageURL: URL
-    let originalURL: URL
+    private let _originalURL: String?
+    
+    var originalURL: URL? {
+        guard let original = _originalURL else {
+            return nil
+        }
+        
+        return URL(string: original)
+    }
     
     private enum CodingKeys: String, CodingKey {
-        case name, ingredients, imageURL, originalURL
+        case name, ingredients, imageURL
+        case _originalURL = "originalURL"
         case _steps = "steps"
         case _timers = "timers"
     }
@@ -71,4 +80,15 @@ extension Recipe {
     }
 }
 
-
+extension Recipe {
+    func contains(name: String) -> Bool {
+        return self.name.lowercased().contains(name.lowercased())
+    }
+    func contains(ingredient: String) -> Bool {
+        return ingredients.contains(where: { $0.name.lowercased().contains(ingredient.lowercased()) } )
+    }
+    
+    func contains(step: String) -> Bool {
+        return steps.contains(where: { $0.description.lowercased().contains(step.lowercased()) } )
+    }
+}

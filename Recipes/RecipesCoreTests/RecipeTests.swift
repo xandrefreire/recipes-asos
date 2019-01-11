@@ -26,17 +26,19 @@ class RecipeTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testRecipe_CreatedFromValidJson() {
+    func testRecipeExistence() {
         XCTAssertNotNil(recipe)
+    }
+    
+    func testRecipe_CreatedFromValidJson() {
         XCTAssertEqual(recipe.name, "Crock Pot Roast")
         XCTAssertEqual(recipe.ingredients.count, 5)
         XCTAssertEqual(recipe.steps.count, 4)
         XCTAssertEqual(recipe.imageURL, URL(string: "http://img.sndimg.com/food/image/upload/w_266/v1/img/recipes/27/20/8/picVfzLZo.jpg")!)
-        XCTAssertEqual(recipe?.originalURL, URL(string: "http://www.food.com/recipe/to-die-for-crock-pot-roast-27208")!)
+        XCTAssertEqual(recipe?.originalURL, nil)
     }
     
     func testRecipe_WhenCustomStepsCalled_ThenReturnsTheCorrectTuple() {
-        XCTAssertNotNil(recipe)
         let steps = recipe.steps
         
         XCTAssertEqual(steps[0].description, "Place beef roast in crock pot.")
@@ -67,4 +69,30 @@ class RecipeTests: XCTestCase {
     func testRecipe_TimeRequired() {
         XCTAssertEqual(recipe.timeRequired, "+20min")
     }
+    
+    func testRecipe_ContainsIngredient_CaseInsensitive() {
+        XCTAssertTrue(recipe.contains(ingredient: "water"))
+        XCTAssertTrue(recipe.contains(ingredient: "Water"))
+        XCTAssertTrue(recipe.contains(ingredient: "WaTeR"))
+        
+        XCTAssertFalse(recipe.contains(ingredient: "wine"))
+    }
+    
+    func testRecipe_ContainsStep_CaseInsensitive() {
+        XCTAssertTrue(recipe.contains(step: "Cook"))
+        XCTAssertTrue(recipe.contains(step: "cooK"))
+        XCTAssertTrue(recipe.contains(step: "Mix"))
+        
+        XCTAssertFalse(recipe.contains(step: "Boil"))
+    }
+    
+    func testRecipe_ContainsName_CaseInsensitive() {
+        XCTAssertTrue(recipe.contains(name: "Roast"))
+        XCTAssertTrue(recipe.contains(name: "Pot Roast"))
+        XCTAssertTrue(recipe.contains(name: "poT roAsT"))
+        
+        XCTAssertFalse(recipe.contains(name: "tomatoe"))
+    }
+    
+    
 }
