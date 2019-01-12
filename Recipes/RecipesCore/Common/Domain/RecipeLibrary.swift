@@ -23,6 +23,9 @@ struct RecipeLibrary {
     }
     
     func recipe(at index: Int) -> Recipe? {
+        guard index < _recipes.count else {
+            return nil
+        }
         return _recipes[index]
     }
     
