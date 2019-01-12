@@ -26,6 +26,9 @@
 		AC004ED021E8A823007B7467 /* one_recipe.json in Resources */ = {isa = PBXBuildFile; fileRef = AC004ECF21E8A823007B7467 /* one_recipe.json */; };
 		AC004ED221E8AF4F007B7467 /* RecipeLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004ED121E8AF4F007B7467 /* RecipeLibrary.swift */; };
 		AC004ED621E8BDC7007B7467 /* RecipeLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004ED521E8BDC6007B7467 /* RecipeLibraryTests.swift */; };
+		AC004ED921E8F2A1007B7467 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004ED821E8F2A1007B7467 /* WebService.swift */; };
+		AC004EDB21E8F383007B7467 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004EDA21E8F383007B7467 /* Endpoint.swift */; };
+		AC004EDD21E8F73F007B7467 /* WebServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004EDC21E8F73F007B7467 /* WebServiceAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +101,9 @@
 		AC004ECF21E8A823007B7467 /* one_recipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = one_recipe.json; sourceTree = "<group>"; };
 		AC004ED121E8AF4F007B7467 /* RecipeLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeLibrary.swift; sourceTree = "<group>"; };
 		AC004ED521E8BDC6007B7467 /* RecipeLibraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeLibraryTests.swift; sourceTree = "<group>"; };
+		AC004ED821E8F2A1007B7467 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		AC004EDA21E8F383007B7467 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		AC004EDC21E8F73F007B7467 /* WebServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +187,7 @@
 		AC004EA321E897E2007B7467 /* RecipesCore */ = {
 			isa = PBXGroup;
 			children = (
+				AC004ED721E8F26F007B7467 /* WebService */,
 				AC004EC021E89831007B7467 /* Common */,
 				AC004EA421E897E2007B7467 /* RecipesCore.h */,
 				AC004EA521E897E2007B7467 /* Info.plist */,
@@ -226,6 +233,16 @@
 				AC004EC621E89B51007B7467 /* recipes.json */,
 			);
 			path = JSONData;
+			sourceTree = "<group>";
+		};
+		AC004ED721E8F26F007B7467 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				AC004ED821E8F2A1007B7467 /* WebService.swift */,
+				AC004EDC21E8F73F007B7467 /* WebServiceAssembly.swift */,
+				AC004EDA21E8F383007B7467 /* Endpoint.swift */,
+			);
+			path = WebService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -426,7 +443,10 @@
 			files = (
 				AC004EC321E898B1007B7467 /* Ingredient.swift in Sources */,
 				AC004ED221E8AF4F007B7467 /* RecipeLibrary.swift in Sources */,
+				AC004ED921E8F2A1007B7467 /* WebService.swift in Sources */,
 				AC004ECC21E8A4E1007B7467 /* Recipe.swift in Sources */,
+				AC004EDD21E8F73F007B7467 /* WebServiceAssembly.swift in Sources */,
+				AC004EDB21E8F383007B7467 /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
