@@ -16,11 +16,12 @@ class RecipeListViewController: UIViewController {
     enum Constants {
         static let columns: CGFloat = 2
         static let itemSpacing: CGFloat = 10
-        static let itemHeight: CGFloat = 265
+        static let itemHeight: CGFloat = 290
         static let inset: CGFloat = 8
     }
     
     // MARK: - Outlets
+    @IBOutlet weak var loadingView: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
            collectionView.register(RecipeCell.self)
@@ -48,10 +49,17 @@ class RecipeListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupView()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        viewModel.didLoadLibrary = { [weak self] in
+        viewModel.didLoad(then: { [weak self] in
+            self?.loadingView.stopAnimating()
             self?.collectionView.reloadData()
-        }
+        }, catchError: { _ in
+            // TODO: Implement
+        })
     }
     
     // Mark: - Setup View

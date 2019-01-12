@@ -18,13 +18,11 @@ protocol RecipeListView: class {
 
 protocol RecipeListViewModelProtocol {
     var recipesCount: Int { get }
-    var didLoadLibrary: () -> Void { get set }
-    var didGetError: (Error) -> Void { get set }
+    func didLoad(then completion: @escaping () -> Void, catchError: @escaping (Error) -> Void)
     func recipe(at index: Int) -> Recipe?
 }
 
 final class RecipeListViewModel: RecipeListViewModelProtocol {
-    
     
     // MARK: Properties
     private var library: RecipeLibrary?
@@ -35,23 +33,9 @@ final class RecipeListViewModel: RecipeListViewModelProtocol {
     init(repository: RecipeLibraryRepositoryProtocol) {
         self.repository = repository
         self.library = nil
-        
-        repository.library()
-            .subscribe(onNext: { [weak self] in
-                guard let self = self else { return }
-                self.library = $0
-                self.didLoadLibrary()
-                
-            }, onError: { [weak self] in
-                self?.didGetError($0)
-            })
-            .disposed(by: disposeBag)
-        
     }
     
     // MARK: RecipeListViewModelProtocol
-    var didLoadLibrary: () -> Void = { }
-    var didGetError: (Error) -> Void = { _ in }
     var recipesCount: Int {
         guard let count = library?.count else {
             return 0
@@ -63,4 +47,19 @@ final class RecipeListViewModel: RecipeListViewModelProtocol {
     func recipe(at index: Int) -> Recipe? {
         return library?.recipe(at: index)
     }
+    
+    func didLoad(then completion: @escaping () -> Void, catchError: @escaping (Error) -> Void) {
+        repository.library()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] in
+                guard let self = self else { return }
+                self.library = $0
+                completion()
+            }, onError: {
+                catchError($0)
+            })
+            .disposed(by: disposeBag)
+        
+    }
+
 }

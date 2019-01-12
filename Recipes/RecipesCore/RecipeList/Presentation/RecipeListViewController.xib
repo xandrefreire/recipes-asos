@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecipeListViewController" customModule="RecipesCore" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="uw4-tc-CHn" id="7K9-Yi-fov"/>
+                <outlet property="loadingView" destination="3Cj-Sx-R2d" id="gmm-HS-W7V"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -31,12 +32,18 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="3Cj-Sx-R2d">
+                    <rect key="frame" x="169" y="315" width="37" height="37"/>
+                    <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="uw4-tc-CHn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HNU-yg-w0d"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="uw4-tc-CHn" secondAttribute="bottom" id="IWJ-JJ-m6u"/>
                 <constraint firstItem="uw4-tc-CHn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="WSD-nb-iFr"/>
+                <constraint firstItem="3Cj-Sx-R2d" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="btP-sx-hCh"/>
+                <constraint firstItem="3Cj-Sx-R2d" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tSL-J6-0TP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uw4-tc-CHn" secondAttribute="trailing" id="zpR-TM-TKj"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
