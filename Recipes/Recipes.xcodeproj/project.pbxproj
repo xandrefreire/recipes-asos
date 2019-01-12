@@ -36,6 +36,7 @@
 		AC004EFF21EA0858007B7467 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC004EF621EA083E007B7467 /* RxCocoa.framework */; };
 		AC004F0021EA085B007B7467 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC004EF721EA083E007B7467 /* RxSwift.framework */; };
 		AC004F0421EA090F007B7467 /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004F0321EA090F007B7467 /* ImageRepository.swift */; };
+		AC004F0721EA10E9007B7467 /* DataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004F0621EA10E9007B7467 /* DataCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		AC004EF721EA083E007B7467 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = SOURCE_ROOT; };
 		AC004EF821EA083E007B7467 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = SOURCE_ROOT; };
 		AC004F0321EA090F007B7467 /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
+		AC004F0621EA10E9007B7467 /* DataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +209,7 @@
 		AC004EA321E897E2007B7467 /* RecipesCore */ = {
 			isa = PBXGroup;
 			children = (
+				AC004F0521EA1085007B7467 /* DataCaching */,
 				AC004F0221EA08F4007B7467 /* ImageLoading */,
 				AC004ED721E8F26F007B7467 /* WebService */,
 				AC004EC021E89831007B7467 /* Common */,
@@ -284,6 +287,14 @@
 				AC004F0321EA090F007B7467 /* ImageRepository.swift */,
 			);
 			path = ImageLoading;
+			sourceTree = "<group>";
+		};
+		AC004F0521EA1085007B7467 /* DataCaching */ = {
+			isa = PBXGroup;
+			children = (
+				AC004F0621EA10E9007B7467 /* DataCache.swift */,
+			);
+			path = DataCaching;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -530,6 +541,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC004F0721EA10E9007B7467 /* DataCache.swift in Sources */,
 				AC004EC321E898B1007B7467 /* Ingredient.swift in Sources */,
 				AC004ED221E8AF4F007B7467 /* RecipeLibrary.swift in Sources */,
 				AC004ED921E8F2A1007B7467 /* WebService.swift in Sources */,
