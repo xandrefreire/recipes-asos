@@ -35,6 +35,7 @@
 		AC004EFE21EA0854007B7467 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC004EF521EA083E007B7467 /* Kingfisher.framework */; };
 		AC004EFF21EA0858007B7467 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC004EF621EA083E007B7467 /* RxCocoa.framework */; };
 		AC004F0021EA085B007B7467 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC004EF721EA083E007B7467 /* RxSwift.framework */; };
+		AC004F0421EA090F007B7467 /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004F0321EA090F007B7467 /* ImageRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		AC004EF621EA083E007B7467 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = SOURCE_ROOT; };
 		AC004EF721EA083E007B7467 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = SOURCE_ROOT; };
 		AC004EF821EA083E007B7467 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = SOURCE_ROOT; };
+		AC004F0321EA090F007B7467 /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 		AC004EA321E897E2007B7467 /* RecipesCore */ = {
 			isa = PBXGroup;
 			children = (
+				AC004F0221EA08F4007B7467 /* ImageLoading */,
 				AC004ED721E8F26F007B7467 /* WebService */,
 				AC004EC021E89831007B7467 /* Common */,
 				AC004EA421E897E2007B7467 /* RecipesCore.h */,
@@ -273,6 +276,14 @@
 				AC004EF821EA083E007B7467 /* RxTest.framework */,
 			);
 			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		AC004F0221EA08F4007B7467 /* ImageLoading */ = {
+			isa = PBXGroup;
+			children = (
+				AC004F0321EA090F007B7467 /* ImageRepository.swift */,
+			);
+			path = ImageLoading;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -525,6 +536,7 @@
 				AC004ECC21E8A4E1007B7467 /* Recipe.swift in Sources */,
 				AC004EDD21E8F73F007B7467 /* WebServiceAssembly.swift in Sources */,
 				AC004EDB21E8F383007B7467 /* Endpoint.swift in Sources */,
+				AC004F0421EA090F007B7467 /* ImageRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
