@@ -42,6 +42,7 @@
 		AC004F0F21EA1384007B7467 /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004F0B21EA1384007B7467 /* UITableView+Reusable.swift */; };
 		AC004F1021EA1384007B7467 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004F0C21EA1384007B7467 /* ReusableView.swift */; };
 		AC004F1221EA13D2007B7467 /* UIViewController+ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004F1121EA13D2007B7467 /* UIViewController+ChildViewController.swift */; };
+		AC004F1421EA144B007B7467 /* ImageLoadingAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004F1321EA144B007B7467 /* ImageLoadingAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 		AC004F0B21EA1384007B7467 /* UITableView+Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
 		AC004F0C21EA1384007B7467 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		AC004F1121EA13D2007B7467 /* UIViewController+ChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ChildViewController.swift"; sourceTree = "<group>"; };
+		AC004F1321EA144B007B7467 /* ImageLoadingAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadingAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				AC004F0321EA090F007B7467 /* ImageRepository.swift */,
+				AC004F1321EA144B007B7467 /* ImageLoadingAssembly.swift */,
 			);
 			path = ImageLoading;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC004F1421EA144B007B7467 /* ImageLoadingAssembly.swift in Sources */,
 				AC004F0721EA10E9007B7467 /* DataCache.swift in Sources */,
 				AC004EC321E898B1007B7467 /* Ingredient.swift in Sources */,
 				AC004ED221E8AF4F007B7467 /* RecipeLibrary.swift in Sources */,
