@@ -37,6 +37,11 @@
 		AC004F0021EA085B007B7467 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC004EF721EA083E007B7467 /* RxSwift.framework */; };
 		AC004F0421EA090F007B7467 /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004F0321EA090F007B7467 /* ImageRepository.swift */; };
 		AC004F0721EA10E9007B7467 /* DataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004F0621EA10E9007B7467 /* DataCache.swift */; };
+		AC004F0D21EA1384007B7467 /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004F0921EA1383007B7467 /* UICollectionView+Reusable.swift */; };
+		AC004F0E21EA1384007B7467 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004F0A21EA1383007B7467 /* NibLoadableView.swift */; };
+		AC004F0F21EA1384007B7467 /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004F0B21EA1384007B7467 /* UITableView+Reusable.swift */; };
+		AC004F1021EA1384007B7467 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004F0C21EA1384007B7467 /* ReusableView.swift */; };
+		AC004F1221EA13D2007B7467 /* UIViewController+ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004F1121EA13D2007B7467 /* UIViewController+ChildViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +124,11 @@
 		AC004EF821EA083E007B7467 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = SOURCE_ROOT; };
 		AC004F0321EA090F007B7467 /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
 		AC004F0621EA10E9007B7467 /* DataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCache.swift; sourceTree = "<group>"; };
+		AC004F0921EA1383007B7467 /* UICollectionView+Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reusable.swift"; sourceTree = "<group>"; };
+		AC004F0A21EA1383007B7467 /* NibLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
+		AC004F0B21EA1384007B7467 /* UITableView+Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
+		AC004F0C21EA1384007B7467 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		AC004F1121EA13D2007B7467 /* UIViewController+ChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ChildViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +244,7 @@
 		AC004EC021E89831007B7467 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				AC004F0821EA1359007B7467 /* Utilities */,
 				AC004EC121E89857007B7467 /* Domain */,
 			);
 			path = Common;
@@ -295,6 +306,18 @@
 				AC004F0621EA10E9007B7467 /* DataCache.swift */,
 			);
 			path = DataCaching;
+			sourceTree = "<group>";
+		};
+		AC004F0821EA1359007B7467 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				AC004F0A21EA1383007B7467 /* NibLoadableView.swift */,
+				AC004F0C21EA1384007B7467 /* ReusableView.swift */,
+				AC004F0921EA1383007B7467 /* UICollectionView+Reusable.swift */,
+				AC004F0B21EA1384007B7467 /* UITableView+Reusable.swift */,
+				AC004F1121EA13D2007B7467 /* UIViewController+ChildViewController.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -544,9 +567,14 @@
 				AC004F0721EA10E9007B7467 /* DataCache.swift in Sources */,
 				AC004EC321E898B1007B7467 /* Ingredient.swift in Sources */,
 				AC004ED221E8AF4F007B7467 /* RecipeLibrary.swift in Sources */,
+				AC004F1021EA1384007B7467 /* ReusableView.swift in Sources */,
 				AC004ED921E8F2A1007B7467 /* WebService.swift in Sources */,
+				AC004F0F21EA1384007B7467 /* UITableView+Reusable.swift in Sources */,
 				AC004ECC21E8A4E1007B7467 /* Recipe.swift in Sources */,
 				AC004EDD21E8F73F007B7467 /* WebServiceAssembly.swift in Sources */,
+				AC004F0E21EA1384007B7467 /* NibLoadableView.swift in Sources */,
+				AC004F0D21EA1384007B7467 /* UICollectionView+Reusable.swift in Sources */,
+				AC004F1221EA13D2007B7467 /* UIViewController+ChildViewController.swift in Sources */,
 				AC004EDB21E8F383007B7467 /* Endpoint.swift in Sources */,
 				AC004F0421EA090F007B7467 /* ImageRepository.swift in Sources */,
 			);
