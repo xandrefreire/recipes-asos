@@ -19,8 +19,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="226" height="215"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XV2-AL-4nO">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XV2-AL-4nO">
                         <rect key="frame" x="0.0" y="0.0" width="226" height="129"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mei-Gr-YG9">
                         <rect key="frame" x="8" y="137" width="31" height="17"/>
@@ -62,7 +63,7 @@
             <size key="customSize" width="226" height="215"/>
             <connections>
                 <outlet property="imageView" destination="XV2-AL-4nO" id="lRW-vQ-3mp"/>
-                <outlet property="ingredientsLabel" destination="8zP-Dl-AKd" id="d6u-Cx-i62"/>
+                <outlet property="ingredientsLabel" destination="uAN-cg-LpZ" id="RFT-Bc-RdW"/>
                 <outlet property="timeLabel" destination="8zP-Dl-AKd" id="4bp-sp-7dw"/>
                 <outlet property="titleLabel" destination="mei-Gr-YG9" id="Y5w-FA-fUo"/>
             </connections>

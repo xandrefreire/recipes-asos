@@ -12,15 +12,20 @@ import RxCocoa
 final class RecipeCellPresenter {
     
     // MARK: Properties
-    private let imageRepository: ImageRepository
+    private let imageRepository: ImageRepositoryProtocol
     
     // MARK: Initialization
-    init(imageRepository: ImageRepository) {
+    init(imageRepository: ImageRepositoryProtocol) {
         self.imageRepository = imageRepository
     }
     
     func present(_ recipe: Recipe, in cell: RecipeCell) {
-        
+        setupViews(of: cell)
+        bindImage(at: recipe.imageURL, to: cell)
+        cell.titleLabel.text = recipe.name.capitalized
+        cell.ingredientsLabel.text = "\(recipe.ingredientsCount) ingredients"
+        cell.timeLabel.text = recipe.timeRequired
+
     }
 }
 
@@ -34,5 +39,12 @@ private extension RecipeCellPresenter {
             .observeOn(MainScheduler.instance)
             .bind(to: cell.imageView.rx.image)
             .disposed(by: cell.disposeBag)
+    }
+    
+    func setupViews(of cell: RecipeCell) {
+        cell.contentView.layer.cornerRadius = 5.0
+        cell.contentView.layer.borderWidth = 0.5
+        cell.contentView.layer.borderColor = UIColor.gray.cgColor
+        cell.contentView.layer.masksToBounds = true
     }
 }

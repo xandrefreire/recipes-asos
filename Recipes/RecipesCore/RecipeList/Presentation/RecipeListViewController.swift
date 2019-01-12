@@ -16,7 +16,8 @@ class RecipeListViewController: UIViewController {
     enum Constants {
         static let columns: CGFloat = 2
         static let itemSpacing: CGFloat = 10
-        static let itemHeight: CGFloat = 215
+        static let itemHeight: CGFloat = 265
+        static let inset: CGFloat = 8
     }
     
     // MARK: - Outlets
@@ -28,7 +29,7 @@ class RecipeListViewController: UIViewController {
     
     // MARK: Properties
     private let collectionViewLayout: UICollectionViewFlowLayout
-    private let viewModel: RecipeListViewModelProtocol
+    private var viewModel: RecipeListViewModelProtocol
     private let cellPresenter: RecipeCellPresenter
 
     // Mark: - Initialization
@@ -36,7 +37,7 @@ class RecipeListViewController: UIViewController {
         self.viewModel = viewModel
         self.cellPresenter = cellPresenter
         self.collectionViewLayout = collectionViewLayout
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -44,23 +45,29 @@ class RecipeListViewController: UIViewController {
     }
     
     // MARK: - Life Cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setupView()
+        
+        viewModel.didLoadLibrary = { [weak self] in
+            self?.collectionView.reloadData()
+        }
     }
     
     // Mark: - Setup View
     func calculateItemWidth() -> CGFloat {
         let viewWidth: CGFloat = view.frame.size.width
-        let totalSpacing: CGFloat = (Constants.columns - 1) * Constants.itemSpacing
+        let totalSpacing: CGFloat = (Constants.columns - 1) * Constants.itemSpacing + 2 * Constants.inset
         
         return (viewWidth - totalSpacing) / Constants.columns
     }
     
     func setupView() {
+        title = "Recipes"
         collectionView.dataSource = self
         let width = calculateItemWidth()
-        collectionViewLayout.itemSize = CGSize(width: width, height: width)
+        collectionViewLayout.itemSize = CGSize(width: width, height: Constants.itemHeight)
+        collectionViewLayout.sectionInset = UIEdgeInsets(top: Constants.inset, left: Constants.inset, bottom: Constants.inset, right: Constants.inset)
         collectionView.collectionViewLayout = collectionViewLayout
     }
 }

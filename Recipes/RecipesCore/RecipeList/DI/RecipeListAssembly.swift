@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class RecipeListAssembly {
+final public class RecipeListAssembly {
     
     // MARK: Properties
     private let imageLoadingAssembly: ImageLoadingAssembly

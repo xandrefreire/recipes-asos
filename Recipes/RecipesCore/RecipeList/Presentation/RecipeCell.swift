@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class RecipeCell: UICollectionViewCell, ReusableView {
+class RecipeCell: UICollectionViewCell, ReusableView, NibLoadableView {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!

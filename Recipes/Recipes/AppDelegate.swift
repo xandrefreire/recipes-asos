@@ -11,11 +11,18 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
+    let appAssembly = AppAssembly()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let initialViewController = appAssembly.coreAssembly.recipeListAssemby.viewController()
+        
+        appAssembly.navigationController.pushViewController(initialViewController, animated: false)
+        
+        appAssembly.window.rootViewController = appAssembly.navigationController
+        
+        appAssembly.window.makeKeyAndVisible()
         return true
     }
 }
