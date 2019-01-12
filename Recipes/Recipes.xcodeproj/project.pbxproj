@@ -29,6 +29,12 @@
 		AC004ED921E8F2A1007B7467 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004ED821E8F2A1007B7467 /* WebService.swift */; };
 		AC004EDB21E8F383007B7467 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004EDA21E8F383007B7467 /* Endpoint.swift */; };
 		AC004EDD21E8F73F007B7467 /* WebServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004EDC21E8F73F007B7467 /* WebServiceAssembly.swift */; };
+		AC004EFA21EA083E007B7467 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC004EF521EA083E007B7467 /* Kingfisher.framework */; };
+		AC004EFB21EA083E007B7467 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC004EF621EA083E007B7467 /* RxCocoa.framework */; };
+		AC004EFC21EA083E007B7467 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC004EF721EA083E007B7467 /* RxSwift.framework */; };
+		AC004EFE21EA0854007B7467 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC004EF521EA083E007B7467 /* Kingfisher.framework */; };
+		AC004EFF21EA0858007B7467 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC004EF621EA083E007B7467 /* RxCocoa.framework */; };
+		AC004F0021EA085B007B7467 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC004EF721EA083E007B7467 /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +110,11 @@
 		AC004ED821E8F2A1007B7467 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		AC004EDA21E8F383007B7467 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		AC004EDC21E8F73F007B7467 /* WebServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceAssembly.swift; sourceTree = "<group>"; };
+		AC004EF421EA083E007B7467 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = SOURCE_ROOT; };
+		AC004EF521EA083E007B7467 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = SOURCE_ROOT; };
+		AC004EF621EA083E007B7467 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = SOURCE_ROOT; };
+		AC004EF721EA083E007B7467 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = SOURCE_ROOT; };
+		AC004EF821EA083E007B7467 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +122,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC004EFC21EA083E007B7467 /* RxSwift.framework in Frameworks */,
+				AC004EFB21EA083E007B7467 /* RxCocoa.framework in Frameworks */,
 				AC004EB721E897E2007B7467 /* RecipesCore.framework in Frameworks */,
+				AC004EFA21EA083E007B7467 /* Kingfisher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +140,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC004EFE21EA0854007B7467 /* Kingfisher.framework in Frameworks */,
+				AC004EFF21EA0858007B7467 /* RxCocoa.framework in Frameworks */,
+				AC004F0021EA085B007B7467 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +160,7 @@
 		AC004E7121E8947A007B7467 = {
 			isa = PBXGroup;
 			children = (
+				AC004EDE21EA0427007B7467 /* Frameworks */,
 				AC004E7C21E8947A007B7467 /* Recipes */,
 				AC004E9121E8947C007B7467 /* RecipesTests */,
 				AC004EA321E897E2007B7467 /* RecipesCore */,
@@ -245,6 +263,18 @@
 			path = WebService;
 			sourceTree = "<group>";
 		};
+		AC004EDE21EA0427007B7467 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC004EF521EA083E007B7467 /* Kingfisher.framework */,
+				AC004EF421EA083E007B7467 /* RxBlocking.framework */,
+				AC004EF621EA083E007B7467 /* RxCocoa.framework */,
+				AC004EF721EA083E007B7467 /* RxSwift.framework */,
+				AC004EF821EA083E007B7467 /* RxTest.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -267,6 +297,7 @@
 				AC004E7721E8947A007B7467 /* Frameworks */,
 				AC004E7821E8947A007B7467 /* Resources */,
 				AC004EBC21E897E2007B7467 /* Embed Frameworks */,
+				AC004EF321EA06F4007B7467 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -304,6 +335,7 @@
 				AC004E9E21E897E2007B7467 /* Sources */,
 				AC004E9F21E897E2007B7467 /* Frameworks */,
 				AC004EA021E897E2007B7467 /* Resources */,
+				AC004F0121EA0878007B7467 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -418,6 +450,52 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AC004EF321EA06F4007B7467 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n\n\n";
+		};
+		AC004F0121EA0878007B7467 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AC004E7621E8947A007B7467 /* Sources */ = {
@@ -628,6 +706,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8LNA9LB2Y8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Recipes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -647,6 +729,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8LNA9LB2Y8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Recipes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -713,6 +799,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RecipesCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -743,6 +833,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RecipesCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
