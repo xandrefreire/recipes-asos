@@ -76,8 +76,8 @@ final class RecipeListViewModel: RecipeListViewModelProtocol {
                 guard let self = self else { return }
                 
                 guard $0.count >= 2 else {
-//                    self.filteredLibrary = self.library
-//                    completion()
+                    self.filteredLibrary = self.library
+                    completion()
                     return
                 }
                 

@@ -24,7 +24,8 @@ final class PhoneSearchNavigator: SearchNavigator {
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.placeholder = NSLocalizedString("Search", comment: "")
         searchController.searchBar.searchBarStyle = .minimal
-        
+        searchController.dimsBackgroundDuringPresentation = false
+
         viewController.navigationItem.titleView = searchController.searchBar
         viewController.definesPresentationContext = true
     }
