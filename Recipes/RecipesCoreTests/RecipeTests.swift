@@ -63,7 +63,7 @@ class RecipeTests: XCTestCase {
     }
     
     func testRecipe_Complexity() {
-        XCTAssertEqual(recipe.complexity, .hard)
+        XCTAssertEqual(recipe.complexity, .medium)
     }
     
     func testRecipe_TimeRequired() {

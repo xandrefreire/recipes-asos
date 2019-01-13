@@ -15,6 +15,7 @@ class RecipeCell: UICollectionViewCell, ReusableView, NibLoadableView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var ingredientsLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var complexityLabel: UILabel!
     
     var disposeBag = DisposeBag()
     
@@ -24,6 +25,7 @@ class RecipeCell: UICollectionViewCell, ReusableView, NibLoadableView {
         titleLabel.text = nil
         ingredientsLabel.text = nil
         timeLabel.text = nil
+        complexityLabel.text = nil
     }
 
 }

@@ -58,9 +58,9 @@ extension Recipe {
 extension Recipe {
     var complexity: Complexity {
         switch ingredientsCount {
-        case 0..<3:
+        case 0..<5:
             return .easy
-        case 3..<5:
+        case 5..<9:
             return .medium
         default:
             return .hard

@@ -25,6 +25,8 @@ final class RecipeCellPresenter {
         cell.titleLabel.text = recipe.name.capitalized
         cell.ingredientsLabel.text = "\(recipe.ingredientsCount) ingredients"
         cell.timeLabel.text = recipe.timeRequired
+        cell.complexityLabel.text = recipe.complexity.rawValue.uppercased()
+        setLabelColor(cell.complexityLabel, forComplexity: recipe.complexity)
 
     }
 }
@@ -46,5 +48,16 @@ private extension RecipeCellPresenter {
         cell.contentView.layer.borderWidth = 0.5
         cell.contentView.layer.borderColor = UIColor.gray.cgColor
         cell.contentView.layer.masksToBounds = true
+    }
+    
+    func setLabelColor(_ label: UILabel, forComplexity complexity: Recipe.Complexity) {
+        switch complexity {
+        case .easy:
+            label.textColor = .greenRecipe
+        case .medium:
+            label.textColor = .orangeRecipe
+        case .hard:
+            label.textColor = .redRecipe
+        }
     }
 }

@@ -51,6 +51,7 @@
 		AC004F2821EA2593007B7467 /* RecipeListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004F2721EA2593007B7467 /* RecipeListAssembly.swift */; };
 		AC004F2A21EA2755007B7467 /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004F2921EA2755007B7467 /* AppAssembly.swift */; };
 		AC004F2D21EA2775007B7467 /* CoreAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004F2C21EA2775007B7467 /* CoreAssembly.swift */; };
+		AC248E3F21EB552400D3F492 /* UIColor+palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC248E3E21EB552400D3F492 /* UIColor+palette.swift */; };
 		ACAA1D2021EAA3D9002AB5ED /* no_image.png in Resources */ = {isa = PBXBuildFile; fileRef = ACAA1D1F21EAA3D8002AB5ED /* no_image.png */; };
 /* End PBXBuildFile section */
 
@@ -148,6 +149,7 @@
 		AC004F2721EA2593007B7467 /* RecipeListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListAssembly.swift; sourceTree = "<group>"; };
 		AC004F2921EA2755007B7467 /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
 		AC004F2C21EA2775007B7467 /* CoreAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAssembly.swift; sourceTree = "<group>"; };
+		AC248E3E21EB552400D3F492 /* UIColor+palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+palette.swift"; sourceTree = "<group>"; };
 		ACAA1D1F21EAA3D8002AB5ED /* no_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no_image.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -339,6 +341,7 @@
 				AC004F0921EA1383007B7467 /* UICollectionView+Reusable.swift */,
 				AC004F0B21EA1384007B7467 /* UITableView+Reusable.swift */,
 				AC004F1121EA13D2007B7467 /* UIViewController+ChildViewController.swift */,
+				AC248E3E21EB552400D3F492 /* UIColor+palette.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -647,6 +650,7 @@
 				AC004F0F21EA1384007B7467 /* UITableView+Reusable.swift in Sources */,
 				AC004ECC21E8A4E1007B7467 /* Recipe.swift in Sources */,
 				AC004EDD21E8F73F007B7467 /* WebServiceAssembly.swift in Sources */,
+				AC248E3F21EB552400D3F492 /* UIColor+palette.swift in Sources */,
 				AC004F2121EA1B51007B7467 /* RecipeLibraryRepository.swift in Sources */,
 				AC004F2D21EA2775007B7467 /* CoreAssembly.swift in Sources */,
 				AC004F0E21EA1384007B7467 /* NibLoadableView.swift in Sources */,

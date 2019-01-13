@@ -41,6 +41,12 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HARD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ir6-I9-o9U">
+                        <rect key="frame" x="8" y="191" width="37" height="16"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <constraints>
@@ -51,17 +57,20 @@
                 <constraint firstItem="uAN-cg-LpZ" firstAttribute="top" secondItem="mei-Gr-YG9" secondAttribute="bottom" constant="8" id="78R-C7-vsx"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mei-Gr-YG9" secondAttribute="trailing" constant="8" id="CiH-yb-lym"/>
                 <constraint firstItem="mei-Gr-YG9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="FxX-H9-3B9"/>
-                <constraint firstItem="8zP-Dl-AKd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="GBT-KZ-ptK"/>
+                <constraint firstItem="8zP-Dl-AKd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ir6-I9-o9U" secondAttribute="trailing" constant="8" id="KjZ-pm-wCu"/>
+                <constraint firstItem="ir6-I9-o9U" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="P2m-EL-L7o"/>
                 <constraint firstAttribute="trailing" secondItem="XV2-AL-4nO" secondAttribute="trailing" id="Sht-cY-4t7"/>
                 <constraint firstItem="8zP-Dl-AKd" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uAN-cg-LpZ" secondAttribute="bottom" constant="8" id="hHk-Zd-zzX"/>
                 <constraint firstItem="uAN-cg-LpZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="hJC-hC-9gp"/>
                 <constraint firstItem="mei-Gr-YG9" firstAttribute="top" secondItem="XV2-AL-4nO" secondAttribute="bottom" constant="8" id="lQx-tn-Hnc"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uAN-cg-LpZ" secondAttribute="trailing" constant="8" id="tsB-eg-qs7"/>
                 <constraint firstItem="XV2-AL-4nO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="y86-Oc-MnY"/>
+                <constraint firstAttribute="bottom" secondItem="ir6-I9-o9U" secondAttribute="bottom" constant="8" id="z3B-1R-ZdB"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="226" height="215"/>
             <connections>
+                <outlet property="complexityLabel" destination="ir6-I9-o9U" id="CrZ-CH-vAI"/>
                 <outlet property="imageView" destination="XV2-AL-4nO" id="lRW-vQ-3mp"/>
                 <outlet property="ingredientsLabel" destination="uAN-cg-LpZ" id="RFT-Bc-RdW"/>
                 <outlet property="timeLabel" destination="8zP-Dl-AKd" id="4bp-sp-7dw"/>
