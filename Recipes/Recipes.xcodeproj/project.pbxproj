@@ -55,6 +55,8 @@
 		AC248E4321EB597700D3F492 /* SearchNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC248E4221EB597700D3F492 /* SearchNavigator.swift */; };
 		AC248E4521EB598700D3F492 /* PhoneSearchNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC248E4421EB598700D3F492 /* PhoneSearchNavigator.swift */; };
 		AC248E4821EB5B7B00D3F492 /* SearchAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC248E4721EB5B7B00D3F492 /* SearchAssembly.swift */; };
+		AC248E5021EB67FD00D3F492 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC248E4E21EB67FD00D3F492 /* RecipeDetailViewController.swift */; };
+		AC248E5121EB67FD00D3F492 /* RecipeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC248E4F21EB67FD00D3F492 /* RecipeDetailViewController.xib */; };
 		ACAA1D2021EAA3D9002AB5ED /* no_image.png in Resources */ = {isa = PBXBuildFile; fileRef = ACAA1D1F21EAA3D8002AB5ED /* no_image.png */; };
 /* End PBXBuildFile section */
 
@@ -156,6 +158,8 @@
 		AC248E4221EB597700D3F492 /* SearchNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNavigator.swift; sourceTree = "<group>"; };
 		AC248E4421EB598700D3F492 /* PhoneSearchNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSearchNavigator.swift; sourceTree = "<group>"; };
 		AC248E4721EB5B7B00D3F492 /* SearchAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAssembly.swift; sourceTree = "<group>"; };
+		AC248E4E21EB67FD00D3F492 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
+		AC248E4F21EB67FD00D3F492 /* RecipeDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeDetailViewController.xib; sourceTree = "<group>"; };
 		ACAA1D1F21EAA3D8002AB5ED /* no_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no_image.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -247,9 +251,10 @@
 		AC004EA321E897E2007B7467 /* RecipesCore */ = {
 			isa = PBXGroup;
 			children = (
-				AC248E4021EB583500D3F492 /* Search */,
 				AC004F2B21EA276B007B7467 /* DI */,
+				AC248E4021EB583500D3F492 /* Search */,
 				AC004F1521EA1475007B7467 /* RecipeList */,
+				AC248E4921EB67B300D3F492 /* RecipeDetail */,
 				AC004F0521EA1085007B7467 /* DataCaching */,
 				AC004F0221EA08F4007B7467 /* ImageLoading */,
 				AC004ED721E8F26F007B7467 /* WebService */,
@@ -426,6 +431,39 @@
 			name = DI;
 			sourceTree = "<group>";
 		};
+		AC248E4921EB67B300D3F492 /* RecipeDetail */ = {
+			isa = PBXGroup;
+			children = (
+				AC248E4A21EB67BF00D3F492 /* DI */,
+				AC248E4C21EB67D100D3F492 /* Navigators */,
+				AC248E4B21EB67C300D3F492 /* Presentation */,
+			);
+			path = RecipeDetail;
+			sourceTree = "<group>";
+		};
+		AC248E4A21EB67BF00D3F492 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		AC248E4B21EB67C300D3F492 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				AC248E4E21EB67FD00D3F492 /* RecipeDetailViewController.swift */,
+				AC248E4F21EB67FD00D3F492 /* RecipeDetailViewController.xib */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		AC248E4C21EB67D100D3F492 /* Navigators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navigators;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -588,6 +626,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC004F1921EA14AA007B7467 /* RecipeListViewController.xib in Resources */,
+				AC248E5121EB67FD00D3F492 /* RecipeDetailViewController.xib in Resources */,
 				AC004F1D21EA15D0007B7467 /* RecipeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -692,6 +731,7 @@
 				AC004F0D21EA1384007B7467 /* UICollectionView+Reusable.swift in Sources */,
 				AC004F1221EA13D2007B7467 /* UIViewController+ChildViewController.swift in Sources */,
 				AC004F2821EA2593007B7467 /* RecipeListAssembly.swift in Sources */,
+				AC248E5021EB67FD00D3F492 /* RecipeDetailViewController.swift in Sources */,
 				AC248E4321EB597700D3F492 /* SearchNavigator.swift in Sources */,
 				AC004F1F21EA1A83007B7467 /* RecipeListViewModel.swift in Sources */,
 				AC004F2321EA210D007B7467 /* RecipeCellPresenter.swift in Sources */,
