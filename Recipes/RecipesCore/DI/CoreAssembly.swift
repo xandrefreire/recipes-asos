@@ -10,9 +10,11 @@ import Foundation
 
 
 final public class CoreAssembly {
-    public private(set) lazy var recipeListAssemby = RecipeListAssembly(webServiceAssembly: webServiceAssembly, imageLoadingAssembly: imageLoadingAssembly)
+    public private(set) lazy var recipeListAssemby = RecipeListAssembly(webServiceAssembly: webServiceAssembly, imageLoadingAssembly: imageLoadingAssembly, searchAssembly: searchAssembly)
     
     private(set) lazy var imageLoadingAssembly = ImageLoadingAssembly()
+    
+    private(set) lazy var searchAssembly = SearchAssembly()
     
     private(set) lazy var webServiceAssembly = WebServiceAssembly()
     

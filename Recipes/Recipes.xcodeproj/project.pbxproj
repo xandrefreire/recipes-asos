@@ -52,6 +52,9 @@
 		AC004F2A21EA2755007B7467 /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004F2921EA2755007B7467 /* AppAssembly.swift */; };
 		AC004F2D21EA2775007B7467 /* CoreAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC004F2C21EA2775007B7467 /* CoreAssembly.swift */; };
 		AC248E3F21EB552400D3F492 /* UIColor+palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC248E3E21EB552400D3F492 /* UIColor+palette.swift */; };
+		AC248E4321EB597700D3F492 /* SearchNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC248E4221EB597700D3F492 /* SearchNavigator.swift */; };
+		AC248E4521EB598700D3F492 /* PhoneSearchNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC248E4421EB598700D3F492 /* PhoneSearchNavigator.swift */; };
+		AC248E4821EB5B7B00D3F492 /* SearchAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC248E4721EB5B7B00D3F492 /* SearchAssembly.swift */; };
 		ACAA1D2021EAA3D9002AB5ED /* no_image.png in Resources */ = {isa = PBXBuildFile; fileRef = ACAA1D1F21EAA3D8002AB5ED /* no_image.png */; };
 /* End PBXBuildFile section */
 
@@ -150,6 +153,9 @@
 		AC004F2921EA2755007B7467 /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
 		AC004F2C21EA2775007B7467 /* CoreAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAssembly.swift; sourceTree = "<group>"; };
 		AC248E3E21EB552400D3F492 /* UIColor+palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+palette.swift"; sourceTree = "<group>"; };
+		AC248E4221EB597700D3F492 /* SearchNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNavigator.swift; sourceTree = "<group>"; };
+		AC248E4421EB598700D3F492 /* PhoneSearchNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSearchNavigator.swift; sourceTree = "<group>"; };
+		AC248E4721EB5B7B00D3F492 /* SearchAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAssembly.swift; sourceTree = "<group>"; };
 		ACAA1D1F21EAA3D8002AB5ED /* no_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no_image.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -241,6 +247,7 @@
 		AC004EA321E897E2007B7467 /* RecipesCore */ = {
 			isa = PBXGroup;
 			children = (
+				AC248E4021EB583500D3F492 /* Search */,
 				AC004F2B21EA276B007B7467 /* DI */,
 				AC004F1521EA1475007B7467 /* RecipeList */,
 				AC004F0521EA1085007B7467 /* DataCaching */,
@@ -391,6 +398,32 @@
 				AC004F2C21EA2775007B7467 /* CoreAssembly.swift */,
 			);
 			path = DI;
+			sourceTree = "<group>";
+		};
+		AC248E4021EB583500D3F492 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				AC248E4621EB5B7200D3F492 /* DI */,
+				AC248E4121EB591900D3F492 /* Navigators */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		AC248E4121EB591900D3F492 /* Navigators */ = {
+			isa = PBXGroup;
+			children = (
+				AC248E4221EB597700D3F492 /* SearchNavigator.swift */,
+				AC248E4421EB598700D3F492 /* PhoneSearchNavigator.swift */,
+			);
+			name = Navigators;
+			sourceTree = "<group>";
+		};
+		AC248E4621EB5B7200D3F492 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				AC248E4721EB5B7B00D3F492 /* SearchAssembly.swift */,
+			);
+			name = DI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -647,6 +680,7 @@
 				AC004F1021EA1384007B7467 /* ReusableView.swift in Sources */,
 				AC004F1821EA14AA007B7467 /* RecipeListViewController.swift in Sources */,
 				AC004ED921E8F2A1007B7467 /* WebService.swift in Sources */,
+				AC248E4521EB598700D3F492 /* PhoneSearchNavigator.swift in Sources */,
 				AC004F0F21EA1384007B7467 /* UITableView+Reusable.swift in Sources */,
 				AC004ECC21E8A4E1007B7467 /* Recipe.swift in Sources */,
 				AC004EDD21E8F73F007B7467 /* WebServiceAssembly.swift in Sources */,
@@ -654,9 +688,11 @@
 				AC004F2121EA1B51007B7467 /* RecipeLibraryRepository.swift in Sources */,
 				AC004F2D21EA2775007B7467 /* CoreAssembly.swift in Sources */,
 				AC004F0E21EA1384007B7467 /* NibLoadableView.swift in Sources */,
+				AC248E4821EB5B7B00D3F492 /* SearchAssembly.swift in Sources */,
 				AC004F0D21EA1384007B7467 /* UICollectionView+Reusable.swift in Sources */,
 				AC004F1221EA13D2007B7467 /* UIViewController+ChildViewController.swift in Sources */,
 				AC004F2821EA2593007B7467 /* RecipeListAssembly.swift in Sources */,
+				AC248E4321EB597700D3F492 /* SearchNavigator.swift in Sources */,
 				AC004F1F21EA1A83007B7467 /* RecipeListViewModel.swift in Sources */,
 				AC004F2321EA210D007B7467 /* RecipeCellPresenter.swift in Sources */,
 				AC004EDB21E8F383007B7467 /* Endpoint.swift in Sources */,

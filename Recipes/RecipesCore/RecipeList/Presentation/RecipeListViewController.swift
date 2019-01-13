@@ -32,12 +32,14 @@ class RecipeListViewController: UIViewController {
     private let collectionViewLayout: UICollectionViewFlowLayout
     private var viewModel: RecipeListViewModelProtocol
     private let cellPresenter: RecipeCellPresenter
+    private let searchNavigator: SearchNavigator
 
     // Mark: - Initialization
-    init(viewModel: RecipeListViewModelProtocol, cellPresenter: RecipeCellPresenter, collectionViewLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()) {
+    init(viewModel: RecipeListViewModelProtocol, cellPresenter: RecipeCellPresenter, searchNavigator: SearchNavigator, collectionViewLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()) {
         self.viewModel = viewModel
         self.cellPresenter = cellPresenter
         self.collectionViewLayout = collectionViewLayout
+        self.searchNavigator = searchNavigator
         super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
     }
     
@@ -53,7 +55,7 @@ class RecipeListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        searchNavigator.installSearch(viewController: self)
         viewModel.didLoad(then: { [weak self] in
             self?.loadingView.stopAnimating()
             self?.collectionView.reloadData()
@@ -97,6 +99,10 @@ extension RecipeListViewController: UICollectionViewDataSource {
         
         return cell
     }
+}
 
-
+extension RecipeListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        viewModel.query.accept(searchController.searchBar.text ?? "")
+    }
 }

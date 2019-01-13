@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let initialViewController = appAssembly.coreAssembly.recipeListAssemby.viewController()
+        let initialViewController = appAssembly.coreAssembly.recipeListAssemby.viewController
         
         appAssembly.navigationController.pushViewController(initialViewController, animated: false)
         

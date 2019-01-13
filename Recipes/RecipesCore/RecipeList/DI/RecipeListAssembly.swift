@@ -13,15 +13,17 @@ final public class RecipeListAssembly {
     // MARK: Properties
     private let imageLoadingAssembly: ImageLoadingAssembly
     private let webServiceAssembly: WebServiceAssembly
+    private let searchAssembly: SearchAssembly
 
     // MARK: Initialization
-    init(webServiceAssembly: WebServiceAssembly, imageLoadingAssembly: ImageLoadingAssembly) {
+    init(webServiceAssembly: WebServiceAssembly, imageLoadingAssembly: ImageLoadingAssembly, searchAssembly: SearchAssembly) {
         self.webServiceAssembly = webServiceAssembly
         self.imageLoadingAssembly = imageLoadingAssembly
+        self.searchAssembly = searchAssembly
     }
     
-    public func viewController() -> UIViewController {
-        return RecipeListViewController(viewModel: viewModel(), cellPresenter: cellPresenter())
+    public var viewController: UIViewController {
+        return RecipeListViewController(viewModel: viewModel(), cellPresenter: cellPresenter(), searchNavigator: searchAssembly.searchNavigator())
     }
     
     func viewModel() -> RecipeListViewModelProtocol {

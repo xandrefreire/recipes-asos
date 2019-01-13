@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 protocol RecipeListView: class {
     var title: String? { get set }
@@ -17,6 +18,7 @@ protocol RecipeListView: class {
 }
 
 protocol RecipeListViewModelProtocol {
+    var query: BehaviorRelay<String> { get set }
     var recipesCount: Int { get }
     func didLoad(then completion: @escaping () -> Void, catchError: @escaping (Error) -> Void)
     func recipe(at index: Int) -> Recipe?
@@ -24,8 +26,10 @@ protocol RecipeListViewModelProtocol {
 
 final class RecipeListViewModel: RecipeListViewModelProtocol {
     
+    
     // MARK: Properties
     private var library: RecipeLibrary?
+    private var filteredLibrary: RecipeLibrary?
     internal var repository: RecipeLibraryRepositoryProtocol
     private let disposeBag = DisposeBag()
     
@@ -37,15 +41,16 @@ final class RecipeListViewModel: RecipeListViewModelProtocol {
     
     // MARK: RecipeListViewModelProtocol
     var recipesCount: Int {
-        guard let count = library?.count else {
+        guard let count = filteredLibrary?.count else {
             return 0
         }
         
         return count
     }
+    var query: BehaviorRelay<String> = BehaviorRelay(value: "")
     
     func recipe(at index: Int) -> Recipe? {
-        return library?.recipe(at: index)
+        return filteredLibrary?.recipe(at: index)
     }
     
     func didLoad(then completion: @escaping () -> Void, catchError: @escaping (Error) -> Void) {
@@ -54,11 +59,32 @@ final class RecipeListViewModel: RecipeListViewModelProtocol {
             .subscribe(onNext: { [weak self] in
                 guard let self = self else { return }
                 self.library = $0
+                self.filteredLibrary = self.library
                 completion()
             }, onError: {
                 catchError($0)
             })
             .disposed(by: disposeBag)
+        
+        query.asObservable()
+            .distinctUntilChanged()
+            .debounce(0.3, scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] in
+                guard let self = self else { return }
+                
+                guard $0.count >= 2 else {
+                    self.filteredLibrary = self.library
+                    completion()
+                    return
+                }
+                
+                self.filteredLibrary = self.library?.recipes(filteredBy: $0)
+                completion()
+            }, onError: {
+                catchError($0)
+            })
+            .disposed(by: disposeBag)
+        
         
     }
 
