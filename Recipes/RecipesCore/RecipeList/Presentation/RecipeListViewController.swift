@@ -10,6 +10,9 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+protocol RecipeListViewControllerProvider: class {
+    var viewController: UIViewController { get }
+}
 class RecipeListViewController: UIViewController {
 
     // Mark: - Constants
@@ -75,6 +78,7 @@ class RecipeListViewController: UIViewController {
     func setupView() {
         title = "Recipes"
         collectionView.dataSource = self
+        collectionView.delegate = self
         let width = calculateItemWidth()
         collectionViewLayout.itemSize = CGSize(width: width, height: Constants.itemHeight)
         collectionViewLayout.sectionInset = UIEdgeInsets(top: Constants.inset, left: Constants.inset, bottom: Constants.inset, right: Constants.inset)
@@ -98,6 +102,13 @@ extension RecipeListViewController: UICollectionViewDataSource {
         }
         
         return cell
+    }
+}
+
+extension RecipeListViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let recipe = viewModel.recipe(at: indexPath.row) else { return }
+        viewModel.didSelect(recipe: recipe)
     }
 }
 

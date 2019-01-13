@@ -19,6 +19,7 @@ final class PhoneSearchNavigator: SearchNavigator {
             fatalError("viewController must conform to UISearchResultsUpdating protocol")
         }
         searchController = UISearchController(searchResultsController: nil)
+        
         searchController.searchResultsUpdater = resultsViewController
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.placeholder = NSLocalizedString("Search", comment: "")

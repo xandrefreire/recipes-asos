@@ -14,12 +14,14 @@ final public class RecipeListAssembly {
     private let imageLoadingAssembly: ImageLoadingAssembly
     private let webServiceAssembly: WebServiceAssembly
     private let searchAssembly: SearchAssembly
+    private let detailAssembly: RecipeDetailAssembly
 
     // MARK: Initialization
-    init(webServiceAssembly: WebServiceAssembly, imageLoadingAssembly: ImageLoadingAssembly, searchAssembly: SearchAssembly) {
+    init(webServiceAssembly: WebServiceAssembly, imageLoadingAssembly: ImageLoadingAssembly, searchAssembly: SearchAssembly, detailAssembly: RecipeDetailAssembly) {
         self.webServiceAssembly = webServiceAssembly
         self.imageLoadingAssembly = imageLoadingAssembly
         self.searchAssembly = searchAssembly
+        self.detailAssembly = detailAssembly
     }
     
     public var viewController: UIViewController {
@@ -27,7 +29,7 @@ final public class RecipeListAssembly {
     }
     
     func viewModel() -> RecipeListViewModelProtocol {
-        return RecipeListViewModel(repository: repository())
+        return RecipeListViewModel(repository: repository(), detailNavigator: detailAssembly.detailNavigator())
     }
     
     func repository() -> RecipeLibraryRepositoryProtocol {
@@ -38,3 +40,5 @@ final public class RecipeListAssembly {
         return RecipeCellPresenter(imageRepository: imageLoadingAssembly.imageRepository)
     }
 }
+
+extension RecipeListAssembly: RecipeListViewControllerProvider {}

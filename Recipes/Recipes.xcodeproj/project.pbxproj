@@ -57,6 +57,12 @@
 		AC248E4821EB5B7B00D3F492 /* SearchAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC248E4721EB5B7B00D3F492 /* SearchAssembly.swift */; };
 		AC248E5021EB67FD00D3F492 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC248E4E21EB67FD00D3F492 /* RecipeDetailViewController.swift */; };
 		AC248E5121EB67FD00D3F492 /* RecipeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC248E4F21EB67FD00D3F492 /* RecipeDetailViewController.xib */; };
+		AC248E5321EB6B2700D3F492 /* RecipeDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC248E5221EB6B2700D3F492 /* RecipeDetailPresenter.swift */; };
+		AC248E5521EB6C8400D3F492 /* DetailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC248E5421EB6C8400D3F492 /* DetailNavigator.swift */; };
+		AC248E5721EB6F3200D3F492 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC248E5621EB6F3200D3F492 /* RowView.swift */; };
+		AC248E5921EB6F4F00D3F492 /* RowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC248E5821EB6F4F00D3F492 /* RowView.xib */; };
+		AC248E5B21EB724D00D3F492 /* RecipeDetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC248E5A21EB724D00D3F492 /* RecipeDetailAssembly.swift */; };
+		AC248E5D21EB739300D3F492 /* RecipeImagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC248E5C21EB739300D3F492 /* RecipeImagePresenter.swift */; };
 		ACAA1D2021EAA3D9002AB5ED /* no_image.png in Resources */ = {isa = PBXBuildFile; fileRef = ACAA1D1F21EAA3D8002AB5ED /* no_image.png */; };
 /* End PBXBuildFile section */
 
@@ -160,6 +166,12 @@
 		AC248E4721EB5B7B00D3F492 /* SearchAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAssembly.swift; sourceTree = "<group>"; };
 		AC248E4E21EB67FD00D3F492 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		AC248E4F21EB67FD00D3F492 /* RecipeDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeDetailViewController.xib; sourceTree = "<group>"; };
+		AC248E5221EB6B2700D3F492 /* RecipeDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailPresenter.swift; sourceTree = "<group>"; };
+		AC248E5421EB6C8400D3F492 /* DetailNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNavigator.swift; sourceTree = "<group>"; };
+		AC248E5621EB6F3200D3F492 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
+		AC248E5821EB6F4F00D3F492 /* RowView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RowView.xib; sourceTree = "<group>"; };
+		AC248E5A21EB724D00D3F492 /* RecipeDetailAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailAssembly.swift; sourceTree = "<group>"; };
+		AC248E5C21EB739300D3F492 /* RecipeImagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeImagePresenter.swift; sourceTree = "<group>"; };
 		ACAA1D1F21EAA3D8002AB5ED /* no_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no_image.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -444,6 +456,7 @@
 		AC248E4A21EB67BF00D3F492 /* DI */ = {
 			isa = PBXGroup;
 			children = (
+				AC248E5A21EB724D00D3F492 /* RecipeDetailAssembly.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -453,6 +466,10 @@
 			children = (
 				AC248E4E21EB67FD00D3F492 /* RecipeDetailViewController.swift */,
 				AC248E4F21EB67FD00D3F492 /* RecipeDetailViewController.xib */,
+				AC248E5221EB6B2700D3F492 /* RecipeDetailPresenter.swift */,
+				AC248E5621EB6F3200D3F492 /* RowView.swift */,
+				AC248E5821EB6F4F00D3F492 /* RowView.xib */,
+				AC248E5C21EB739300D3F492 /* RecipeImagePresenter.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -460,6 +477,7 @@
 		AC248E4C21EB67D100D3F492 /* Navigators */ = {
 			isa = PBXGroup;
 			children = (
+				AC248E5421EB6C8400D3F492 /* DetailNavigator.swift */,
 			);
 			path = Navigators;
 			sourceTree = "<group>";
@@ -628,6 +646,7 @@
 				AC004F1921EA14AA007B7467 /* RecipeListViewController.xib in Resources */,
 				AC248E5121EB67FD00D3F492 /* RecipeDetailViewController.xib in Resources */,
 				AC004F1D21EA15D0007B7467 /* RecipeCell.xib in Resources */,
+				AC248E5921EB6F4F00D3F492 /* RowView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -716,6 +735,7 @@
 				AC004EC321E898B1007B7467 /* Ingredient.swift in Sources */,
 				AC004F1C21EA15D0007B7467 /* RecipeCell.swift in Sources */,
 				AC004ED221E8AF4F007B7467 /* RecipeLibrary.swift in Sources */,
+				AC248E5321EB6B2700D3F492 /* RecipeDetailPresenter.swift in Sources */,
 				AC004F1021EA1384007B7467 /* ReusableView.swift in Sources */,
 				AC004F1821EA14AA007B7467 /* RecipeListViewController.swift in Sources */,
 				AC004ED921E8F2A1007B7467 /* WebService.swift in Sources */,
@@ -729,6 +749,7 @@
 				AC004F0E21EA1384007B7467 /* NibLoadableView.swift in Sources */,
 				AC248E4821EB5B7B00D3F492 /* SearchAssembly.swift in Sources */,
 				AC004F0D21EA1384007B7467 /* UICollectionView+Reusable.swift in Sources */,
+				AC248E5D21EB739300D3F492 /* RecipeImagePresenter.swift in Sources */,
 				AC004F1221EA13D2007B7467 /* UIViewController+ChildViewController.swift in Sources */,
 				AC004F2821EA2593007B7467 /* RecipeListAssembly.swift in Sources */,
 				AC248E5021EB67FD00D3F492 /* RecipeDetailViewController.swift in Sources */,
@@ -736,6 +757,9 @@
 				AC004F1F21EA1A83007B7467 /* RecipeListViewModel.swift in Sources */,
 				AC004F2321EA210D007B7467 /* RecipeCellPresenter.swift in Sources */,
 				AC004EDB21E8F383007B7467 /* Endpoint.swift in Sources */,
+				AC248E5721EB6F3200D3F492 /* RowView.swift in Sources */,
+				AC248E5521EB6C8400D3F492 /* DetailNavigator.swift in Sources */,
+				AC248E5B21EB724D00D3F492 /* RecipeDetailAssembly.swift in Sources */,
 				AC004F0421EA090F007B7467 /* ImageRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

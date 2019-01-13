@@ -22,6 +22,7 @@ protocol RecipeListViewModelProtocol {
     var recipesCount: Int { get }
     func didLoad(then completion: @escaping () -> Void, catchError: @escaping (Error) -> Void)
     func recipe(at index: Int) -> Recipe?
+    func didSelect(recipe: Recipe)
 }
 
 final class RecipeListViewModel: RecipeListViewModelProtocol {
@@ -31,11 +32,13 @@ final class RecipeListViewModel: RecipeListViewModelProtocol {
     private var library: RecipeLibrary?
     private var filteredLibrary: RecipeLibrary?
     internal var repository: RecipeLibraryRepositoryProtocol
+    private let detailNavigator: DetailNavigator
     private let disposeBag = DisposeBag()
     
     // MARK: Initialization
-    init(repository: RecipeLibraryRepositoryProtocol) {
+    init(repository: RecipeLibraryRepositoryProtocol, detailNavigator: DetailNavigator) {
         self.repository = repository
+        self.detailNavigator = detailNavigator
         self.library = nil
     }
     
@@ -73,8 +76,8 @@ final class RecipeListViewModel: RecipeListViewModelProtocol {
                 guard let self = self else { return }
                 
                 guard $0.count >= 2 else {
-                    self.filteredLibrary = self.library
-                    completion()
+//                    self.filteredLibrary = self.library
+//                    completion()
                     return
                 }
                 
@@ -84,8 +87,10 @@ final class RecipeListViewModel: RecipeListViewModelProtocol {
                 catchError($0)
             })
             .disposed(by: disposeBag)
-        
-        
+    }
+    
+    func didSelect(recipe: Recipe) {
+        detailNavigator.showDetail(of: recipe)
     }
 
 }
