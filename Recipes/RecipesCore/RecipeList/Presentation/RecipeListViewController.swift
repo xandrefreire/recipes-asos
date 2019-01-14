@@ -64,8 +64,8 @@ class RecipeListViewController: UIViewController {
         viewModel.didLoad(then: { [weak self] in
             self?.loadingView.stopAnimating()
             self?.collectionView.reloadData()
-        }, catchError: { _ in
-            // TODO: Implement
+        }, catchError: { [weak self] error in
+            self?.add(ErrorViewController(error: error.localizedDescription))
         })
     }
     

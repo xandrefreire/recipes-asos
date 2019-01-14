@@ -10,21 +10,30 @@ import UIKit
 
 class ErrorViewController: UIViewController {
 
+    // MARK: - Outlets
+    @IBOutlet weak var errorLabel: UILabel!
+    
+    // MARK: Properties
+    private let error: String
+    
+    // MARK: Initialization
+    init(error: String) {
+        self.error = error
+        super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelDidTap))
+        errorLabel.text = error
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @objc func cancelDidTap() {
+        dismiss(animated: true, completion: nil)
     }
-    */
-
 }
