@@ -50,7 +50,7 @@ class RecipeLibraryTests: XCTestCase {
 
     }
     
-    func testRecipeLibrary_FilteredBy_ReturnsTheCorrectSubLibrary() {
+    func testRecipeLibrary_FilteredByQuery_ReturnsTheCorrectSubLibrary() {
         var filtered = library.recipes(filteredBy: "Pizza")
         
         XCTAssertEqual(filtered.count, 1)
@@ -58,5 +58,17 @@ class RecipeLibraryTests: XCTestCase {
         filtered = library.recipes(filteredBy: "Roast")
         
         XCTAssertEqual(filtered.count, 2)
+    }
+    
+    func testRecipeLibrary_FilteredByQueryAndComplexity_ReturnsTheCorrectSubLibrary() {
+        var filtered = library.recipes(filteredBy: "Pizza", complexity: .hard)
+        XCTAssertEqual(filtered.count, 0)
+        
+        filtered = library.recipes(filteredBy: "Roast", complexity: .hard)
+        XCTAssertEqual(filtered.count, 0)
+        filtered = library.recipes(filteredBy: "Roast", complexity: .medium)
+        XCTAssertEqual(filtered.count, 1)
+        filtered = library.recipes(filteredBy: "Roast", complexity: .easy)
+        XCTAssertEqual(filtered.count, 1)
     }
 }

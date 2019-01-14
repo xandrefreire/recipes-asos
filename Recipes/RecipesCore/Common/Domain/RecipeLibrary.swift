@@ -29,13 +29,19 @@ struct RecipeLibrary {
         return _recipes[index]
     }
     
-    func recipes(filteredBy query: String) -> RecipeLibrary {
+    func recipes(filteredBy query: String, complexity: Recipe.Complexity? = nil) -> RecipeLibrary {
         let filtered = _recipes.filter {
             $0.contains(name: query) ||
             $0.contains(step: query) ||
             $0.contains(ingredient: query)
         }
         
-        return RecipeLibrary(recipes: filtered)
+        guard let complexity = complexity else {
+            return RecipeLibrary(recipes: filtered)
+        }
+        
+        let scopedFiltered = filtered.filter { $0.complexity == complexity }
+        
+        return RecipeLibrary(recipes: scopedFiltered)
     }
 }
