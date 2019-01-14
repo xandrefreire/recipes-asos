@@ -40,8 +40,18 @@ struct RecipeLibrary {
             return RecipeLibrary(recipes: filtered)
         }
         
-        let scopedFiltered = filtered.filter { $0.complexity == complexity }
+        return RecipeLibrary(recipes: filtered).recipes(withComplexity: complexity)
         
-        return RecipeLibrary(recipes: scopedFiltered)
+    }
+    
+    func recipes(withComplexity complexity: Recipe.Complexity?) -> RecipeLibrary {
+        guard let complexity = complexity else {
+            return RecipeLibrary(recipes: _recipes)
+        }
+        
+        let filtered = _recipes.filter { $0.complexity == complexity }
+        
+        return RecipeLibrary(recipes: filtered)
+        
     }
 }

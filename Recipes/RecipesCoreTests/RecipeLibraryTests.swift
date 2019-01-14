@@ -71,4 +71,15 @@ class RecipeLibraryTests: XCTestCase {
         filtered = library.recipes(filteredBy: "Roast", complexity: .easy)
         XCTAssertEqual(filtered.count, 1)
     }
+    
+    func testRecipeLibrary_FilteredByComplexity_ReturnsTheCorrectSubLibrary() {
+        var filtered = library.recipes(withComplexity: .hard)
+        XCTAssertEqual(filtered.count, 3)
+        
+        filtered = library.recipes(withComplexity: .medium)
+        XCTAssertEqual(filtered.count, 4)
+        
+        filtered = library.recipes(withComplexity: .easy)
+        XCTAssertEqual(filtered.count, 2)
+    }
 }

@@ -18,6 +18,7 @@ protocol RecipeListView: class {
 }
 
 protocol RecipeListViewModelProtocol {
+    var complexitySelected: Recipe.Complexity? { get set }
     var query: BehaviorRelay<String> { get set }
     var recipesCount: Int { get }
     func didLoad(then completion: @escaping () -> Void, catchError: @escaping (Error) -> Void)
@@ -50,6 +51,9 @@ final class RecipeListViewModel: RecipeListViewModelProtocol {
         
         return count
     }
+    
+    var complexitySelected: Recipe.Complexity? = nil
+    
     var query: BehaviorRelay<String> = BehaviorRelay(value: "")
     
     func recipe(at index: Int) -> Recipe? {
@@ -70,18 +74,18 @@ final class RecipeListViewModel: RecipeListViewModelProtocol {
             .disposed(by: disposeBag)
         
         query.asObservable()
-            .distinctUntilChanged()
-            .debounce(0.3, scheduler: MainScheduler.instance)
+//            .distinctUntilChanged()
+//            .debounce(0.3, scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] in
                 guard let self = self else { return }
                 
                 guard $0.count >= 2 else {
-                    self.filteredLibrary = self.library
+                    self.filteredLibrary = self.library?.recipes(withComplexity: self.complexitySelected)
                     completion()
                     return
                 }
                 
-                self.filteredLibrary = self.library?.recipes(filteredBy: $0)
+                self.filteredLibrary = self.library?.recipes(filteredBy: $0, complexity: self.complexitySelected)
                 completion()
             }, onError: {
                 catchError($0)

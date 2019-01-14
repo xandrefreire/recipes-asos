@@ -9,6 +9,6 @@
 import Foundation
 
 protocol SearchNavigator {
-    func installSearch(viewController: UIViewController)
+    func installSearch(viewController: UIViewController, scopeOptions: [String]?)
 }
 

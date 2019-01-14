@@ -58,7 +58,7 @@ class RecipeListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchNavigator.installSearch(viewController: self)
+        searchNavigator.installSearch(viewController: self, scopeOptions: ["All", "Easy", "Medium", "Hard"])
         viewModel.didLoad(then: { [weak self] in
             self?.loadingView.stopAnimating()
             self?.collectionView.reloadData()
@@ -79,13 +79,17 @@ class RecipeListViewController: UIViewController {
         title = "Recipes"
         collectionView.dataSource = self
         collectionView.delegate = self
+        
         let width = calculateItemWidth()
         collectionViewLayout.itemSize = CGSize(width: width, height: Constants.itemHeight)
         collectionViewLayout.sectionInset = UIEdgeInsets(top: Constants.inset, left: Constants.inset, bottom: Constants.inset, right: Constants.inset)
         collectionView.collectionViewLayout = collectionViewLayout
+        
+        
     }
 }
 
+// MARK: - UICollectionViewDataSource
 extension RecipeListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.recipesCount
@@ -105,6 +109,7 @@ extension RecipeListViewController: UICollectionViewDataSource {
     }
 }
 
+// MARK: - UICollectionViewDelegate
 extension RecipeListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let recipe = viewModel.recipe(at: indexPath.row) else { return }
@@ -112,8 +117,18 @@ extension RecipeListViewController: UICollectionViewDelegate {
     }
 }
 
+// MARK: - UISearchResultsUpdating
 extension RecipeListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         viewModel.query.accept(searchController.searchBar.text ?? "")
+    }
+}
+
+// MARK: - UISearchBarDelegate
+extension RecipeListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        guard let title = searchBar.scopeButtonTitles?[selectedScope].lowercased() else { return }
+        viewModel.complexitySelected = Recipe.Complexity(rawValue: title)
+        viewModel.query.accept(searchBar.text ?? "")
     }
 }
