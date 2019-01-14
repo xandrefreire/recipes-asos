@@ -19,8 +19,6 @@ final class PhoneSearchNavigator: SearchNavigator {
             fatalError("viewController must conform to UISearchResultsUpdating protocol")
         }
         
-        
-        
         searchController = UISearchController(searchResultsController: nil)
         
         searchController.searchResultsUpdater = resultsViewController
@@ -35,6 +33,7 @@ final class PhoneSearchNavigator: SearchNavigator {
             searchController.searchBar.scopeButtonTitles = scopeOptions
             searchController.searchBar.delegate = viewControllerWithScopeOptions
         }
+        
         searchController.searchBar.sizeToFit()
         viewController.navigationItem.titleView = searchController.searchBar
         viewController.definesPresentationContext = true
