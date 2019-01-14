@@ -63,6 +63,7 @@
 		AC248E5921EB6F4F00D3F492 /* RowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC248E5821EB6F4F00D3F492 /* RowView.xib */; };
 		AC248E5B21EB724D00D3F492 /* RecipeDetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC248E5A21EB724D00D3F492 /* RecipeDetailAssembly.swift */; };
 		AC248E5D21EB739300D3F492 /* RecipeImagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC248E5C21EB739300D3F492 /* RecipeImagePresenter.swift */; };
+		AC248E6221EC9E5700D3F492 /* Date+Comparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC248E6121EC9E5700D3F492 /* Date+Comparison.swift */; };
 		ACAA1D2021EAA3D9002AB5ED /* no_image.png in Resources */ = {isa = PBXBuildFile; fileRef = ACAA1D1F21EAA3D8002AB5ED /* no_image.png */; };
 /* End PBXBuildFile section */
 
@@ -172,6 +173,7 @@
 		AC248E5821EB6F4F00D3F492 /* RowView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RowView.xib; sourceTree = "<group>"; };
 		AC248E5A21EB724D00D3F492 /* RecipeDetailAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailAssembly.swift; sourceTree = "<group>"; };
 		AC248E5C21EB739300D3F492 /* RecipeImagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeImagePresenter.swift; sourceTree = "<group>"; };
+		AC248E6121EC9E5700D3F492 /* Date+Comparison.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Comparison.swift"; sourceTree = "<group>"; };
 		ACAA1D1F21EAA3D8002AB5ED /* no_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no_image.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -366,6 +368,7 @@
 				AC004F0B21EA1384007B7467 /* UITableView+Reusable.swift */,
 				AC004F1121EA13D2007B7467 /* UIViewController+ChildViewController.swift */,
 				AC248E3E21EB552400D3F492 /* UIColor+palette.swift */,
+				AC248E6121EC9E5700D3F492 /* Date+Comparison.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -739,6 +742,7 @@
 				AC004F1021EA1384007B7467 /* ReusableView.swift in Sources */,
 				AC004F1821EA14AA007B7467 /* RecipeListViewController.swift in Sources */,
 				AC004ED921E8F2A1007B7467 /* WebService.swift in Sources */,
+				AC248E6221EC9E5700D3F492 /* Date+Comparison.swift in Sources */,
 				AC248E4521EB598700D3F492 /* PhoneSearchNavigator.swift in Sources */,
 				AC004F0F21EA1384007B7467 /* UITableView+Reusable.swift in Sources */,
 				AC004ECC21E8A4E1007B7467 /* Recipe.swift in Sources */,

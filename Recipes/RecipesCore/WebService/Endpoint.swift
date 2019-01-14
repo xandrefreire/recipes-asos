@@ -46,6 +46,8 @@ internal extension Endpoint {
         var request = URLRequest(url: components.url!)
         request.httpMethod = method.rawValue
         
+        request.cachePolicy = .useProtocolCachePolicy
+        
         return request
     }
 }

@@ -8,32 +8,13 @@
 
 import Foundation
 
-public protocol DataCache: class {
+public protocol DataCacheProtocol: class {
     
-    func data(for url: URL) -> CacheDataWithDate?
+    func data(for urlRequest: URLRequest) -> Data?
     
-    func setData(_ data: Data, for url: URL)
+    func setData(_ data: Data, for urlRequest: URLRequest)
 }
 
-public final class CacheDataWithDate {
-    let date: NSDate
-    let data: NSData
-    
-    init(data: NSData, date: NSDate) {
-        (self.data, self.date) = (data, date)
-    }
-}
 
-final class MemoryDataCache: DataCache {
-    
-    private let cache = NSCache<NSURL, CacheDataWithDate>()
-    
-    func data(for url: URL) -> CacheDataWithDate? {
-        return cache.object(forKey: url as NSURL)
-    }
-    
-    func setData(_ data: Data, for url: URL) {
-        let dataWithDate = CacheDataWithDate(data: data as NSData, date: Date() as NSDate)
-        cache.setObject(dataWithDate, forKey: url as NSURL)
-    }
-}
+
+
