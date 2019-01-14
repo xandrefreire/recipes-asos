@@ -38,6 +38,4 @@ extension RecipeDetailAssembly: RecipeDetailViewControllerProvider {
     func viewController(recipe: Recipe) -> RecipeDetailViewController {
         return RecipeDetailViewController(presenter: presenter(recipe: recipe), imagePresenter: imagePresenter())
     }
-    
-    
 }

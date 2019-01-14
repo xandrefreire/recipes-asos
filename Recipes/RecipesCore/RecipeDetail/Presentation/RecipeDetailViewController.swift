@@ -45,6 +45,7 @@ class RecipeDetailViewController: UIViewController {
     }
 }
 
+// MARK: - RecipeDetailView
 extension RecipeDetailViewController: RecipeDetailView {
     func setIngredientsHeaderTitle(_ title: String) {
         ingredientsLabel.text = title
@@ -76,7 +77,6 @@ extension RecipeDetailViewController: RecipeDetailView {
         }
         
         ingredientsViews.forEach { ingredientsStackView.addArrangedSubview($0) }
-
     }
     
     func update(with steps: [Step]) {
@@ -89,6 +89,5 @@ extension RecipeDetailViewController: RecipeDetailView {
         }
         
         stepsViews.forEach { instructionsStackView.addArrangedSubview($0) }
-
     }
 }

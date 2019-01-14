@@ -29,6 +29,4 @@ final class PhoneDetailNavigator: DetailNavigator {
 
         navigationController.pushViewController(viewController, animated: true)
     }
-    
-    
 }

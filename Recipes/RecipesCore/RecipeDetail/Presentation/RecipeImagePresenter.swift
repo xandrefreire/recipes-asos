@@ -30,6 +30,5 @@ final class RecipeImagePresenter {
             .observeOn(MainScheduler.instance)
             .bind(to: imageView.rx.image)
             .disposed(by: disposeBag)
-        
     }
 }

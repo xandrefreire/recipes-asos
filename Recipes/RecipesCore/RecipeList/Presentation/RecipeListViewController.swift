@@ -58,7 +58,9 @@ class RecipeListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         searchNavigator.installSearch(viewController: self, scopeOptions: ["All", "Easy", "Medium", "Hard"])
+        
         viewModel.didLoad(then: { [weak self] in
             self?.loadingView.stopAnimating()
             self?.collectionView.reloadData()
