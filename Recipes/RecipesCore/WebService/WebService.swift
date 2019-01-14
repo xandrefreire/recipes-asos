@@ -20,25 +20,14 @@ final class WebService {
     private let baseURL = URL(string: "https://mobile.asosservices.com/sampleapifortest")!
     private let decoder = JSONDecoder()
     
-    private var cache: URLCache {
-        let cache = URLCache(memoryCapacity: 0, diskCapacity: 500 * 1024 * 1024, diskPath: "recipes/cache")
-        URLCache.shared = cache
-        return cache
-    }
-    
-    private var formatter: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "E, d MMM yyyy HH:mm:ss Z"
-        return formatter
-    }
+    private var cache: DataCaching = DataCacher()
     
     func load<T: Decodable>(_ type: T.Type, from endpoint: Endpoint, then completion: @escaping (T) -> Void, catchError: @escaping (Error) -> Void) {
         let decoder = self.decoder
         let request = endpoint.request(with: baseURL)
         let cache = self.cache
         
-        if let cachedResponse = cache.cachedResponse(for: request), let object = try? decoder.decode(T.self, from: cachedResponse.data) {
-            
+        if let data = cache.data(for: request), let object = try? decoder.decode(T.self, from: data) {
             completion(object)
             return
         }
@@ -54,7 +43,7 @@ final class WebService {
                     
                     if 200 ..< 300 ~= httpResponse.statusCode {
                         if let data = data {
-                            cache.storeCachedResponse(CachedURLResponse(response: httpResponse, data: data), for: request)
+                            cache.store(response: httpResponse, data: data, for: request)
                             
                             if let object = try? decoder.decode(T.self, from: data) {
                                 completion(object)
@@ -76,34 +65,13 @@ final class WebService {
         let request = endpoint.request(with: baseURL)
         let cache = self.cache
 
-        if let cachedResponse = cache.cachedResponse(for: request), let object = try? decoder.decode(T.self, from: cachedResponse.data) {
-            
-            guard let httpResponse = cachedResponse.response as? HTTPURLResponse else {
-                fatalError("Unsupported protocol")
-            }
-            
-            print(httpResponse)
-            if let dateString = httpResponse.allHeaderFields["Date"] as? String,
-                let date = formatter.date(from: dateString) {
-                
-                let now = Date()
-                
-                if now.minutes(from: date) < 60 {
-                    return Observable.just(object)
-                }
-            }
-            
+        if let data = cache.data(for: request), let object = try? decoder.decode(T.self, from: data) {
+            return Observable.just(object)
         }
         
         return session.rx.data(request: request)
             .do(onNext: {
-                guard let httpResponse = $0 as? HTTPURLResponse else {
-                    fatalError("Unsupported protocol")
-                }
-                print(httpResponse)
-                cache.removeAllCachedResponses()
-                let cached = CachedURLResponse(response: $0, data: $1)
-                cache.storeCachedResponse(cached, for: request)
+                cache.store(response: $0, data: $1, for: request)
             })
             .map { try decoder.decode(T.self, from: $1) }
             .catchError { error in
