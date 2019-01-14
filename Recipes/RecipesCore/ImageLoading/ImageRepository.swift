@@ -20,12 +20,29 @@ internal protocol ImageManager {
 
 extension KingfisherManager: ImageManager {
     func image(withURL url: URL) -> Observable<UIImage> {
+        let cache = self.cache
         return Observable.create{ observer in
-            let task = self.downloader.downloadImage(with: url) { result in
+            
+            cache.retrieveImageInDiskCache(forKey: url.absoluteString) { result in
+                switch result {
+                case .success(let image):
+                    if let image = image {
+                        observer.onNext(image)
+                        observer.onCompleted()
+                    }
+                case .failure(let error):
+                    observer.onError(error)
+                }
+            }
+            
+            let task = self.downloader.downloadImage(with: url) { [weak self] result in
+                guard let self = self else { return }
                 switch result {
                 case .success(let value):
+                    self.cache.storeToDisk(value.image.pngData() ?? Data(), forKey: url.absoluteString)
                     observer.onNext(value.image)
                     observer.onCompleted()
+                    
                 case .failure(let error):
                     observer.onError(error)
                 }

@@ -74,8 +74,7 @@ final class RecipeListViewModel: RecipeListViewModelProtocol {
             .disposed(by: disposeBag)
         
         query.asObservable()
-//            .distinctUntilChanged()
-//            .debounce(0.3, scheduler: MainScheduler.instance)
+            .debounce(0.3, scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] in
                 guard let self = self else { return }
                 
@@ -96,5 +95,4 @@ final class RecipeListViewModel: RecipeListViewModelProtocol {
     func didSelect(recipe: Recipe) {
         detailNavigator.showDetail(of: recipe)
     }
-
 }

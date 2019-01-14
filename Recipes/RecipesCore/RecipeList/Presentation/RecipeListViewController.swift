@@ -84,8 +84,6 @@ class RecipeListViewController: UIViewController {
         collectionViewLayout.itemSize = CGSize(width: width, height: Constants.itemHeight)
         collectionViewLayout.sectionInset = UIEdgeInsets(top: Constants.inset, left: Constants.inset, bottom: Constants.inset, right: Constants.inset)
         collectionView.collectionViewLayout = collectionViewLayout
-        
-        
     }
 }
 
